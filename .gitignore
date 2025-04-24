@@ -1,0 +1,47 @@
+# Ignore editor backup files
+*~
+*.swp
+*.swo
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Ignore Python egg and distribution files
+*.egg-info/
+dist/
+build/
+*.egg
+*.whl
+
+# Ignore coverage reports
+.coverage
+*.cover
+*.cov
+*.coverage.*
+*.hypothesis/
+*.hypothesis.*
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+
+# Ignore VSCode settings specific to *your* user, but keep workspace settings
+.vscode/*.code-workspace
+
+# Ignore temporary or output files created by scripts
+*.log
+output/

@@ -41,7 +41,66 @@ Thumbs.db
 
 # Ignore VSCode settings specific to *your* user, but keep workspace settings
 .vscode/*.code-workspace
+.github/
 
 # Ignore temporary or output files created by scripts
 *.log
 output/
+
+# Ignore data files
+samples/
+*.csv
+*.json
+*.xlsx
+*.xls
+*.hdf5
+*.h5
+*.parquet
+*.feather
+*.pickle
+*.pkl
+*.pytorch
+*.pt
+*.onnx
+*.tflite
+*.pb
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+
+# Ignore media files
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.flv
+*.wmv
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+
+# Ignore images
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.svg
+
+# Ignore Document files
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+
+# Ignore Binary files
+*.bin
+*.exe
+*.dll
+*.so

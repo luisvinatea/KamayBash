@@ -1,17 +1,18 @@
 {
-    "files.associations": {
-      "*.sh": "shellscript"
-    },
-    "[shellscript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true,
-      "editor.formatOnSaveMode": "file"
-    },
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "files.eol": "\n",
-    "editor.trimAutoWhitespace": true,
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
+  "files.associations": {
+    "*.sh": "shellscript"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
     "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "editor.trimAutoWhitespace": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "docwriter.style": "NumPy"
 }

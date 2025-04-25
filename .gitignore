@@ -3,6 +3,10 @@
 *.swp
 *.swo
 
+# Ignore snippet files and directories
+*.snippets
+snippets/
+
 # Ignore compiled Python files
 __pycache__/
 *.py[cod]

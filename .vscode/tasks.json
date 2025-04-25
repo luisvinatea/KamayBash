@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Current Bash Script",
+      "type": "shell",
+      "command": "bash ${file}",
+      "presentation": {
+        "reveal": "always", // Show the terminal when running
+        "panel": "dedicated" // Use a dedicated terminal panel
+      },
+      "group": {
+        "kind": "build", // You can categorize tasks
+        "isDefault": true // Make this the default build task (optional)
+      },
+      "problemMatcher": [] // Or configure to match specific output patterns
+    }
+  ]
+}

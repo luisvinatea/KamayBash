@@ -31,11 +31,12 @@
           <div class="body" role="main">
             
   <h1>Source code for copy_location</h1><div class="highlight"><pre>
-<span></span><span class="c1"># pylint: disable=C0114,C0115,C0116,C0411,W0246,W0613,E0401</span>
+<span></span><span class="c1"># pylint: disable=C0114,C0115,C0116,C0411,W0246,W0613,E0401,W0221</span>
 <span class="c1"># type: ignore</span>
 <span class="sd">&quot;&quot;&quot;Nautilus extension to copy file or folder location to the clipboard.&quot;&quot;&quot;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">unquote</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">gi.repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">Nautilus</span><span class="p">,</span> <span class="n">GObject</span>  <span class="c1"># type: ignore</span>
 
 
@@ -49,17 +50,16 @@
 
 <div class="viewcode-block" id="CopyLocationExtension.get_file_items">
 <a class="viewcode-back" href="../extensions/copy_location.html#copy_location.CopyLocationExtension.get_file_items">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_items</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">_window</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Nautilus</span><span class="o">.</span><span class="n">FileInfo</span><span class="p">]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">]:</span>
+        <span class="c1"># pylint: disable=arguments-differ</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list with one &#39;Copy Location&#39; menu item for a single file or</span>
 <span class="sd">        folder.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># Handle different Nautilus versions</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">files</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
         <span class="c1"># Only show for single file/folder</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="p">[]</span>
@@ -77,7 +77,7 @@
 <a class="viewcode-back" href="../extensions/copy_location.html#copy_location.CopyLocationExtension.copy_location">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">copy_location</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
-        <span class="n">menu</span><span class="p">:</span> <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">,</span>
+        <span class="n">_menu</span><span class="p">:</span> <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">,</span>
         <span class="n">files</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Nautilus</span><span class="o">.</span><span class="n">FileInfo</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

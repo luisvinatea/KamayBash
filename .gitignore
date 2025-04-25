@@ -45,7 +45,7 @@ Thumbs.db
 
 # Ignore VSCode settings specific to *your* user, but keep workspace settings
 .vscode/*.code-workspace
-.github/
+.github/copilot-instructions.md
 .editorconfig/
 .shellcheckrc
 
@@ -90,6 +90,7 @@ samples/
 *.aac
 
 # Ignore images
+Icons/
 *.jpg
 *.jpeg
 *.png

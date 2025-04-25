@@ -34,11 +34,6 @@
             
   <section id="module-organize_by_extension">
 <span id="organize-by-extension"></span><h1>organize_by_extension<a class="headerlink" href="#module-organize_by_extension" title="Link to this heading">¶</a></h1>
-<p>Organize by Extension Extension for Nautilus
-This extension allows users to organize files in a selected folder by their
-file extensions, moving each file to a lowercase subdirectory named after its
-extension. It integrates with the Nautilus file manager to provide a context
-menu option.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="organize_by_extension.OrganizeByExtensionExtension">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">organize_by_extension.</span></span><span class="sig-name descname"><span class="pre">OrganizeByExtensionExtension</span></span><a class="reference internal" href="../_modules/organize_by_extension.html#OrganizeByExtensionExtension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#organize_by_extension.OrganizeByExtensionExtension" title="Link to this definition">¶</a></dt>
@@ -46,14 +41,11 @@ menu option.</p>
 <p>Extension to organize files by extension in Nautilus.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="organize_by_extension.OrganizeByExtensionExtension.get_file_items">
-<span class="sig-name descname"><span class="pre">get_file_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/organize_by_extension.html#OrganizeByExtensionExtension.get_file_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#organize_by_extension.OrganizeByExtensionExtension.get_file_items" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_file_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/organize_by_extension.html#OrganizeByExtensionExtension.get_file_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#organize_by_extension.OrganizeByExtensionExtension.get_file_items" title="Link to this definition">¶</a></dt>
 <dd><p>Return a list of menu items for the selected files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>_window</strong> – Ignored window parameter</p></li>
-<li><p><strong>files</strong> – List of selected file items</p></li>
-</ul>
+<dd class="field-odd"><p><strong>files</strong> – List of selected file items</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>List of menu items to display</p>

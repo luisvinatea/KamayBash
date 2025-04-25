@@ -46,41 +46,31 @@
 
 <div class="viewcode-block" id="MergePDFExtension">
 <a class="viewcode-back" href="../extensions/merge_pdf.html#merge_pdf.MergePDFExtension">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">MergePDFExtension</span><span class="p">(</span>
-    <span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
-    <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuProvider</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
-<span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MergePDFExtension</span><span class="p">(</span><span class="n">GObject</span><span class="o">.</span><span class="n">GObject</span><span class="p">,</span> <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuProvider</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Extension to merge selected PDF files in Nautilus.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="MergePDFExtension.get_file_items">
 <a class="viewcode-back" href="../extensions/merge_pdf.html#merge_pdf.MergePDFExtension.get_file_items">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_items</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">_window</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
-        <span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_file_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Return a list of menu items for the selected files.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            _window: Ignored window parameter</span>
 <span class="sd">            files: List of selected file items</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List of menu items to display</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># Show only when one or more PDF files are selected</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_is_pdf_document</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">files</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_is_pdf_document</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">):</span>
             <span class="k">return</span> <span class="p">[]</span>
 
-        <span class="n">item</span> <span class="o">=</span> <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">(</span>  <span class="c1"># type: ignore</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">Nautilus</span><span class="o">.</span><span class="n">MenuItem</span><span class="p">(</span>
             <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MergePDFExtension::MergePDF&#39;</span><span class="p">,</span>
             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Merge PDF Files&#39;</span><span class="p">,</span>
             <span class="n">tip</span><span class="o">=</span><span class="s1">&#39;Merge selected PDF files into a single file&#39;</span>
         <span class="p">)</span>
-        <span class="n">item</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;activate&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_pdf_files</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+        <span class="n">item</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;activate&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_pdf_files</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span></div>
 
 
@@ -95,9 +85,7 @@
 
 <div class="viewcode-block" id="MergePDFExtension.merge_pdf_files">
 <a class="viewcode-back" href="../extensions/merge_pdf.html#merge_pdf.MergePDFExtension.merge_pdf_files">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="nf">merge_pdf_files</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">_menu</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">merge_pdf_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_menu</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Invoke external script to merge selected PDF files.</span>
 
@@ -110,7 +98,7 @@
             <span class="k">return</span>
 
         <span class="n">script_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span>
-            <span class="s2">&quot;~/.local/share/nautilus/scripts/documents/merge_pdf.sh&quot;</span><span class="p">)</span>
+            <span class="s2">&quot;~/.local/share/nautilus/scripts/merge_pdf.sh&quot;</span><span class="p">)</span>
 
         <span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">file_list</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">)</span>

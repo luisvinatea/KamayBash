@@ -42,6 +42,8 @@ Thumbs.db
 # Ignore VSCode settings specific to *your* user, but keep workspace settings
 .vscode/*.code-workspace
 .github/
+.editorconfig/
+.shellcheckrc
 
 # Ignore temporary or output files created by scripts
 *.log

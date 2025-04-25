@@ -44,7 +44,6 @@ Thumbs.db
 
 
 # Ignore VSCode settings specific to *your* user, but keep workspace settings
-.vscode/*.code-workspace
 .github/copilot-instructions.md
 .editorconfig/
 .shellcheckrc
@@ -52,6 +51,7 @@ Thumbs.db
 # Ignore temporary or output files created by scripts
 *.log
 output/
+scripts/
 
 # Ignore data files
 samples/

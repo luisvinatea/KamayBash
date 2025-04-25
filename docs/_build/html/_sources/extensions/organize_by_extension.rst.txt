@@ -1,8 +1,8 @@
-.. _organize_by_extension:
-Organize by Extension
-========================
+organize_by_extension
+=====================
 
 .. automodule:: organize_by_extension
    :members:
    :undoc-members:
    :show-inheritance:
+

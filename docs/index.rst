@@ -1,8 +1,5 @@
-.. KamayBash documentation master file, created by
-   sphinx-quickstart.
-
 Welcome to KamayBash's documentation!
-====================================
+=====================================
 
 .. toctree::
    :maxdepth: 2

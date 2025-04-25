@@ -1,9 +1,8 @@
-.. _flatten_folder:
-
-Flatten Folder
+flatten_folder
 ==============
 
 .. automodule:: flatten_folder
    :members:
    :undoc-members:
    :show-inheritance:
+

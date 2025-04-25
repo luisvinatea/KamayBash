@@ -32,7 +32,8 @@ jobs:
             libcairo2-dev \
             gobject-introspection \
             libglib2.0-dev \
-            libffi-dev
+            libffi-dev \
+            gir1.2-nautilus-3.0  # Added for Nautilus typelib
 
       - name: Install Python dependencies
         run: |

@@ -3,22 +3,19 @@
 """Nautilus extension to copy file or folder location to the clipboard."""
 import os
 from urllib.parse import unquote
-from typing import Any
 from gi.repository import Nautilus, GObject  # type: ignore
 
 
 class CopyLocationExtension(GObject.GObject, Nautilus.MenuProvider):
-    """Extension to add 'Copy Location' menu in Nautilus file manager."""
+    """Extension to add 'Copy Location' menu item in Nautilus file manager."""
 
     def __init__(self) -> None:
         super().__init__()
 
     def get_file_items(
         self,
-        _window: Any,
         files: list[Nautilus.FileInfo]
     ) -> list[Nautilus.MenuItem]:
-        # pylint: disable=arguments-differ
         """
         Return a list with one 'Copy Location' menu item for a single file or
         folder.

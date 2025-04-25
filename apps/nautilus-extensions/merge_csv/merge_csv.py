@@ -1,3 +1,4 @@
+# pylint: disable=arguments-differ
 """
 MergeCSV Nautilus extension to merge selected CSV files via an external script.
 """
@@ -17,10 +18,8 @@ class MergeCSVExtension(
 
     def get_file_items(
         self,
-        _window: Any,
         files: List[Any]  # Nautilus.FileInfo
     ) -> List[Any]:  # Nautilus.MenuItem
-        # pylint: disable=arguments-differ
         """Return menu item if one or more CSV files are selected."""
         if not files:
             return []
@@ -58,7 +57,7 @@ class MergeCSVExtension(
 
         # location of the merge script
         script_path = os.path.expanduser(
-            "~/.local/share/nautilus/scripts/data/merge_csv.sh")
+            "~/.local/share/nautilus/scripts/merge_csv.sh")
 
         path = os.path.dirname(paths[0])
         os.system(f"{script_path} --dir '{path}'")

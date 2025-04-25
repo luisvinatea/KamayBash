@@ -53,6 +53,7 @@ Thumbs.db
 output/
 scripts/
 tests/
+test/
 
 # Ignore symbolic links
 *.lnk

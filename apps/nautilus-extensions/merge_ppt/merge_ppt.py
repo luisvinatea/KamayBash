@@ -73,7 +73,7 @@ class MergePPTExtension(
             return
 
         script_path = os.path.expanduser(
-            "~/.local/share/nautilus/scripts/documents/merge_ppt.sh")
+            "~/.local/share/nautilus/scripts/merge_ppt.sh")
 
         output_dir = os.path.dirname(paths[0])
         file_list = ' '.join(f"'{p}'" for p in paths)

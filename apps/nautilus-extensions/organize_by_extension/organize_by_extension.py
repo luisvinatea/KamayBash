@@ -1,11 +1,5 @@
-"""Organize by Extension Extension for Nautilus
-This extension allows users to organize files in a selected folder by their
-file extensions, moving each file to a lowercase subdirectory named after its
-extension. It integrates with the Nautilus file manager to provide a context
-menu option.
-"""
-# pylint: disable=import-error,arguments-differ
-
+# pylint: disable=arguments-differ
+# pylint: disable=missing-module-docstring
 import os
 from typing import Any, List
 from urllib.parse import unquote
@@ -20,14 +14,12 @@ class OrganizeByExtensionExtension(
 
     def get_file_items(
         self,
-        _window: Any,
         files: List[Any]
     ) -> List[Any]:
         """
         Return a list of menu items for the selected files.
 
         Args:
-            _window: Ignored window parameter
             files: List of selected file items
 
         Returns:
@@ -67,7 +59,7 @@ class OrganizeByExtensionExtension(
             return
 
         script_path = os.path.expanduser(
-            "~/.local/share/nautilus/scripts/desktop/organize_by_extension.sh"
+            "~/.local/share/nautilus/scripts/organize_by_extension.sh"
         )
         os.system(f"{script_path} --dir '{path}'")
 

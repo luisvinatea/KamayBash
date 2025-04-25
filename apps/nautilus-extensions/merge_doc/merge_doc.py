@@ -19,11 +19,7 @@ class MergeDOCExtension(
 ):
     """Extension to merge selected DOC and DOCX files in Nautilus."""
 
-    def get_file_items(
-        self,
-        _window: Any,
-        files: List[Any]
-    ) -> List[Any]:
+    def get_file_items(self, files: List[Any]) -> List[Any]:
         """
         Return a list of menu items for the selected files.
 
@@ -75,7 +71,7 @@ class MergeDOCExtension(
             return
 
         script_path = os.path.expanduser(
-            "~/.local/share/nautilus/scripts/documents/merge_doc.sh")
+            "~/.local/share/nautilus/scripts/merge_doc.sh")
 
         output_dir = os.path.dirname(paths[0])
         file_list = ' '.join(f"'{p}'" for p in paths)

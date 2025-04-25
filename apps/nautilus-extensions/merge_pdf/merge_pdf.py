@@ -11,39 +11,29 @@ from urllib.parse import unquote
 from gi.repository import Nautilus, GObject  # type: ignore
 
 
-class MergePDFExtension(
-    GObject.GObject,  # type: ignore
-    Nautilus.MenuProvider,  # type: ignore
-):
+class MergePDFExtension(GObject.GObject, Nautilus.MenuProvider):
     """Extension to merge selected PDF files in Nautilus."""
 
-    def get_file_items(
-        self,
-        _window: Any,
-        files: List[Any]
-    ) -> List[Any]:
+    def get_file_items(self, files: List[Any]) -> List[Any]:
         """
         Return a list of menu items for the selected files.
 
         Args:
-            _window: Ignored window parameter
             files: List of selected file items
 
         Returns:
             List of menu items to display
         """
         # Show only when one or more PDF files are selected
-        if not files or not all(
-            self._is_pdf_document(f) for f in files
-        ):
+        if not files or not all(self._is_pdf_document(f) for f in files):
             return []
 
-        item = Nautilus.MenuItem(  # type: ignore
+        item = Nautilus.MenuItem(
             name='MergePDFExtension::MergePDF',
             label='Merge PDF Files',
             tip='Merge selected PDF files into a single file'
         )
-        item.connect('activate', self.merge_pdf_files, files)  # type: ignore
+        item.connect('activate', self.merge_pdf_files, files)
         return [item]
 
     def _is_pdf_document(self, file_info: Any) -> bool:
@@ -55,9 +45,7 @@ class MergePDFExtension(
             or filename.endswith('.pdf')
         )
 
-    def merge_pdf_files(
-        self, _menu: Any, files: List[Any]
-    ) -> None:
+    def merge_pdf_files(self, _menu: Any, files: List[Any]) -> None:
         """
         Invoke external script to merge selected PDF files.
 
@@ -70,7 +58,7 @@ class MergePDFExtension(
             return
 
         script_path = os.path.expanduser(
-            "~/.local/share/nautilus/scripts/documents/merge_pdf.sh")
+            "~/.local/share/nautilus/scripts/merge_pdf.sh")
 
         output_dir = os.path.dirname(paths[0])
         file_list = ' '.join(f"'{p}'" for p in paths)

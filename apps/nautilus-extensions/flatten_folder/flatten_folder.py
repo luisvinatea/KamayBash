@@ -18,7 +18,7 @@ class FlattenFolderExtension(
 ):
     """Extension to flatten a selected folder in Nautilus."""
 
-    def get_file_items(self, _window: Any, files: List[Any]) -> List[Any]:
+    def get_file_items(self, files: List[Any]) -> List[Any]:
         # pylint: disable=arguments-differ
         """Return a list of menu items for the selected files."""
 

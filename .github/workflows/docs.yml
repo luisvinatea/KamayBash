@@ -22,7 +22,10 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y software-properties-common
-          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 gir1.2-girepository-2.0-dev python3-gi pkg-config python3-nautilus libnotify-bin poppler-utils pandoc unoconv libcairo2-dev
+          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 \
+            gir1.2-girepository-2.0-dev python3-gi pkg-config python3-nautilus \
+            libnotify-bin poppler-utils pandoc unoconv libcairo2-dev \
+            gobject-introspection
 
       - name: Install Python dependencies
         run: |

@@ -39,7 +39,7 @@ pip install PyGObject
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/<username>/KamayBash.git
+   git clone https://github.com/luisvinatea/KamayBash.git
    cd KamayBash
    ```
 

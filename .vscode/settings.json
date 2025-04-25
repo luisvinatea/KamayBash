@@ -3,7 +3,8 @@
     "*.sh": "shellscript"
   },
   "[shellscript]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode",
+    // Confirmed with the team: using "foxundermoon.shell-format" as the default formatter for shell scripts
+    "editor.defaultFormatter": "foxundermoon.shell-format",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file"
   },
@@ -13,6 +14,23 @@
   "editor.trimAutoWhitespace": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "docwriter.style": "NumPy"
+  // The "docwriter.style" is set to "NumPy" as it aligns with the team's preferred documentation style for consistency.
+  "docwriter.style": "NumPy",
+  // Hide cache folders from the file explorer including symbolic links
+  "files.watcherExclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.tox": true,
+    "**/.coverage": true,
+    "**/.coverage.*": true,
+    "**/.hypothesis": true,
+    // Exclude project-specific cache folder to reduce noise in file watcher
+    "**/.cache": true,
+    "**/nautilus-python/extensions/__pycache__": true,
+    "**/scripts/extensions/__pycache__": true
+  },
+  "files.exclude": {
+    "**/scripts/extensions/__pycache__": true
+  }
 }

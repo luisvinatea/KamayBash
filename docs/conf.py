@@ -7,7 +7,16 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../scripts/extensions'))
+sys.path.insert(0, os.path.abspath(
+    '../apps/nautilus-extensions/copy_location'))
+sys.path.insert(0, os.path.abspath(
+    '../apps/nautilus-extensions/flatten_folder'))
+sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_csv'))
+sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_doc'))
+sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_pdf'))
+sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_ppt'))
+sys.path.insert(0, os.path.abspath(
+    '../apps/nautilus-extensions/organize_by_extension'))
 
 PROJECT = 'KamayBash'
 COPYRIGHT = '2025, Luis Vinatea'

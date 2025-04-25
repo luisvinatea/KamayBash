@@ -29,7 +29,9 @@ jobs:
             python3-gi \
             pkg-config \
             libcairo2-dev \
-            gobject-introspection
+            gobject-introspection \
+            libglib2.0-dev \
+            libffi-dev \
 
       - name: Install Python dependencies
         run: |

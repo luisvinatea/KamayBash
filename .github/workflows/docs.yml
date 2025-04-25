@@ -22,11 +22,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y software-properties-common
-          # Use an alternative to the unavailable PPA
-          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 gir1.2-girepository-2.0-dev python3-gi pkg-config python3-nautilus libnotify-bin poppler-utils pandoc unoconv
-
-      - name: Install cairo dependency
-        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev
+          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 gir1.2-girepository-2.0-dev python3-gi pkg-config python3-nautilus libnotify-bin poppler-utils pandoc unoconv libcairo2-dev
 
       - name: Install Python dependencies
         run: |

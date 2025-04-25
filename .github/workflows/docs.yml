@@ -21,7 +21,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 gir1.2-girepository-2.0-dev python3-gi pkg-config
+          sudo apt install -y libgirepository1.0-dev gir1.2-nautilus-4.0 gir1.2-girepository-2.0-dev python3-gi pkg-config python3-nautilus libnotify-bin pdfunite pandoc unoconv
 
       - name: Install Python dependencies
         run: |

@@ -54,6 +54,7 @@ output/
 scripts/
 tests/
 test/
+practice/
 
 # Ignore symbolic links
 *.lnk

@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_pdf'))
 sys.path.insert(0, os.path.abspath('../apps/nautilus-extensions/merge_ppt'))
 sys.path.insert(0, os.path.abspath(
     '../apps/nautilus-extensions/organize_by_extension'))
+sys.path.insert(0, os.path.abspath('../apps/web/KamayPWA'))
 
 PROJECT = 'KamayBash'
 COPYRIGHT = '2025, Luis Vinatea'

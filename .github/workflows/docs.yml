@@ -41,6 +41,14 @@ jobs:
           pip install --upgrade pip
           pip install sphinx sphinx-rtd-theme PyGObject==3.42.1
 
+      - name: Install sphinx
+        run: |
+          pip install sphinx
+
+      - name: Install sphinx_rtd_theme
+        run: |
+          pip install sphinx_rtd_theme
+
       - name: Build Sphinx documentation
         run: |
           cd docs

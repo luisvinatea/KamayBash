@@ -49,14 +49,15 @@ jobs:
         run: |
           pip install sphinx_rtd_theme
 
+      - name: Install gh-pages
+        run: |
+          npm install -g gh-pages
+
       - name: Build Sphinx documentation
         run: |
           cd docs
           make html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/_build/html
-          publish_branch: gh-pages # Explicitly set the target branch
+        run: |
+          gh-pages -d docs/_build/html

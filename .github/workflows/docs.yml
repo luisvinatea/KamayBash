@@ -49,6 +49,11 @@ jobs:
         run: |
           pip install sphinx_rtd_theme
 
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Install gh-pages
         run: |
           npm install -g gh-pages
@@ -60,4 +65,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          gh-pages -d docs/_build/html
+          gh-pages -d docs/_build/html --dest .

@@ -1,1 +1,4 @@
-sphinx\nsphinx-rtd-theme\nPyGObject
+sphinx
+sphinx-rtd-theme
+PyGObject
+gh-pages

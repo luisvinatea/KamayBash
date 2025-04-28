@@ -8,8 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions: # Add this section
-      contents: write # Grant write permission to GITHUB_TOKEN
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -34,25 +34,18 @@ jobs:
             libcairo2-dev \
             gobject-introspection \
             libglib2.0-dev \
-            libffi-dev
+            libffi-dev \
+            gir1.2-nautilus-3.0
 
       - name: Install Python dependencies
         run: |
           pip install --upgrade pip
           pip install sphinx sphinx-rtd-theme PyGObject==3.42.1
 
-      - name: Install sphinx
-        run: |
-          pip install sphinx
-
-      - name: Install sphinx_rtd_theme
-        run: |
-          pip install sphinx_rtd_theme
-
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
 
       - name: Install gh-pages
         run: |
@@ -65,4 +58,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          gh-pages -d docs/_build/html --dest .
+          gh-pages -d docs/_build/html

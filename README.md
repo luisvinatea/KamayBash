@@ -22,7 +22,7 @@ KamayBash ("To Create" in Quechua) is a collection of Bash and Python scripts de
 - **Custom logo**: You can choose your own icon in this prompt by providing the full path to an image.
 - **Sandboxed PWAs**: No PWA stores cookies sessions from one another.
 - **Option to edit existing PWAs**: You can edit existing PWAs from the main interface menu.
-- **List all PWAs**: Optiion from the main menu that lists all PWAs installed.
+- **List all PWAs**: Option from the main menu that lists all PWAs installed.
 - **Delete a PWA**: Option from the main menu to remove an existing PWA.
 
 ## Prerequisites
@@ -67,9 +67,9 @@ pip install PyGObject
 
    - For **KamayPWA:**
 
-      ```bash
-      /apps/web/KamayPWA/setup.sh
-      ```
+   ```bash
+   /apps/web/KamayPWA/setup.sh
+   ```
 
 ## Testing
 

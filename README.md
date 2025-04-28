@@ -1,8 +1,10 @@
 # KamayBash
 
-KamayBash ("Tool" in Quechua) is a collection of Bash and Python scripts designed to automate repetitive file management tasks in Linux via Nautilus context menu extensions. It simplifies tasks like merging files, flattening folder structures, and organizing files by extension, making your workflow more efficient.
+KamayBash ("To Create" in Quechua) is a collection of Bash and Python scripts designed to automate repetitive file management tasks in Linux via Nautilus context menu extensions. It simplifies tasks like merging files, flattening folder structures, and organizing files by extension, making your workflow more efficient.
 
 ## Features
+
+### Nautilus Extensions
 
 - **Copy Location**: Copy file or folder paths to the clipboard.
 - **Merge CSV**: Combine multiple CSV files into a single file.
@@ -12,13 +14,24 @@ KamayBash ("Tool" in Quechua) is a collection of Bash and Python scripts designe
 - **Flatten Folder**: Move all files from subdirectories to the root folder.
 - **Organize by Extension**: Sort files into subdirectories based on their lowercase extensions.
 
+### KamayPWA
+
+- **Make your own PWAs**: The app launches a terminal shell asking for the desired URL.
+- **Works with either Chrome or Edge**: The script prompts for the desired browser to make the PWA from.
+- **Name Prompt**: Inquires the user to provide a name.
+- **Custom logo**: You can choose your own icon in this prompt by providing the full path to an image.
+- **Sandboxed PWAs**: No PWA stores cookies sessions from one another.
+- **Option to edit existing PWAs**: You can edit existing PWAs from the main interface menu.
+- **List all PWAs**: Optiion from the main menu that lists all PWAs installed.
+- **Delete a PWA**: Option from the main menu to remove an existing PWA.
+
 ## Prerequisites
 
 Before installing, ensure you have the following dependencies installed on your Linux system (Ubuntu/Debian-based):
 
 ```bash
 sudo apt update
-sudo apt install -y python3-nautilus python3-gi libnotify-bin pdfunite pandoc unoconv
+sudo apt install -y python3-nautilus python3-gi libnotify-bin pdfunite pandoc unoconv kitty
 ```
 
 - `python3-nautilus`: Enables Nautilus Python extensions.
@@ -27,6 +40,7 @@ sudo apt install -y python3-nautilus python3-gi libnotify-bin pdfunite pandoc un
 - `pdfunite`: Required for `merge_pdf`.
 - `pandoc`: Required for `merge_doc`.
 - `unoconv`: Required for `merge_ppt`.
+- `kitty`: Required for `KamayPWA`
 
 Additionally, install Python dependencies:
 
@@ -43,54 +57,27 @@ pip install PyGObject
    cd KamayBash
    ```
 
-2. **Copy Python Extensions**:
-   Copy the Python scripts to the Nautilus Python extensions directory:
+2. **Run the setup scripts**
+
+   - For **nautilus-extensions:**
 
    ```bash
-   mkdir -p ~/.local/share/nautilus-python/extensions
-   cp apps/nautilus-extensions/*/copy_location.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/flatten_folder.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/merge_csv.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/merge_doc.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/merge_pdf.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/merge_ppt.py ~/.local/share/nautilus-python/extensions/
-   cp apps/nautilus-extensions/*/organize_by_extension.py ~/.local/share/nautilus-python/extensions/
+   /apps/nautilus-extensions/setup.sh
    ```
 
-3. **Copy Bash Scripts**:
-   Copy the Bash scripts to the Nautilus scripts directory:
+   - For **KamayPWA:**
 
-   ```bash
-   mkdir -p ~/.local/share/nautilus/scripts
-   cp apps/nautilus-extensions/*/flatten_folder.sh ~/.local/share/nautilus/scripts/
-   cp apps/nautilus-extensions/*/merge_csv.sh ~/.local/share/nautilus/scripts/
-   cp apps/nautilus-extensions/*/merge_doc.sh ~/.local/share/nautilus/scripts/
-   cp apps/nautilus-extensions/*/merge_pdf.sh ~/.local/share/nautilus/scripts/
-   cp apps/nautilus-extensions/*/merge_ppt.sh ~/.local/share/nautilus/scripts/
-   cp apps/nautilus-extensions/*/organize_by_extension.sh ~/.local/share/nautilus/scripts/
-   ```
-
-4. **Make Bash Scripts Executable**:
-   Ensure the Bash scripts are executable:
-
-   ```bash
-   chmod +x ~/.local/share/nautilus/scripts/*.sh
-   ```
-
-5. **Restart Nautilus**:
-   Reload Nautilus to apply the extensions:
-
-   ```bash
-   nautilus -q
-   ```
+      ```bash
+      /apps/web/KamayPWA/setup.sh
+      ```
 
 ## Testing
 
 1. Open Nautilus (Files) in your Linux desktop environment.
 2. Right-click on a file or folder:
    - Select **Copy Location** to copy the path to the clipboard.
-   - Navigate to **Scripts** > select a script (e.g., `merge_csv.sh`, `flatten_folder.sh`) to run it on selected files.
-3. For file merging (e.g., CSV, PDF, DOC, PPT), select multiple files, right-click, and choose the corresponding script from the **Scripts** menu.
+   - The context menu should dynamically fetch the appropriate script when selecting files or folders (e.g., `merge_csv.sh`, `flatten_folder.sh`, `merge_pdf.sh`).
+3. For file merging (e.g., CSV, PDF, DOC, PPT), select multiple files, right-click, and choose the corresponding script from the menu.
 4. Check for desktop notifications (via `libnotify-bin`) to confirm actions (e.g., “Files merged successfully”).
 
 ## Documentation

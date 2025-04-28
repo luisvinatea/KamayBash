@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=KamayPWA
+Exec=kitty --class KamayPWA -- bash -c "/home/luisvinatea/DEVinatea/Repos/KamayBash/apps/web/KamayPWA.sh; exec bash"
+Icon=/home/luisvinatea/Pictures/Icons/KamayPWA.png
+Terminal=false
+StartupWMClass=KamayPWA
+

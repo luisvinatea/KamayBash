@@ -55,6 +55,8 @@ scripts/
 tests/
 test/
 practice/
+practice/markdown/
+
 
 # Ignore symbolic links
 *.lnk
@@ -96,10 +98,8 @@ samples/
 *.aac
 
 # Ignore images
-Icons/
 *.jpg
 *.jpeg
-*.png
 *.gif
 *.bmp
 *.tiff

@@ -142,6 +142,8 @@ EOF
       ;;
     5)
       echo "Exiting pwaCRAFTER. Goodbye!"
+      # Attempt to close the terminal window
+      kill -s TERM $PPID
       exit 0
       ;;
     *)

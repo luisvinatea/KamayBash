@@ -11,7 +11,9 @@ from urllib.parse import unquote
 from gi.repository import Nautilus, GObject  # type: ignore
 
 
-class MergePDFExtension(GObject.GObject, Nautilus.MenuProvider):
+class MergePDFExtension(
+    GObject.GObject, Nautilus.MenuProvider  # type: ignore
+):
     """Extension to merge selected PDF files in Nautilus."""
 
     def get_file_items(self, files: List[Any]) -> List[Any]:
@@ -28,12 +30,12 @@ class MergePDFExtension(GObject.GObject, Nautilus.MenuProvider):
         if not files or not all(self._is_pdf_document(f) for f in files):
             return []
 
-        item = Nautilus.MenuItem(
+        item: Nautilus.MenuItem = Nautilus.MenuItem(  # type: ignore
             name='MergePDFExtension::MergePDF',
             label='Merge PDF Files',
             tip='Merge selected PDF files into a single file'
         )
-        item.connect('activate', self.merge_pdf_files, files)
+        item.connect('activate', self.merge_pdf_files, files)  # type: ignore
         return [item]
 
     def _is_pdf_document(self, file_info: Any) -> bool:

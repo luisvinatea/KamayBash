@@ -35,10 +35,11 @@ jobs:
             gobject-introspection \
             libglib2.0-dev \
             libffi-dev || true
-          # Handle missing package gir1.2-nautilus-3.0
-          if ! sudo apt install -y gir1.2-nautilus-3.0; then
-            echo "Package gir1.2-nautilus-3.0 not found. Skipping..."
-          fi
+          # Ensure the required package gir1.2-nautilus-3.0 is installed
+          sudo apt install -y gir1.2-nautilus-3.0 || {
+            echo "Failed to install gir1.2-nautilus-3.0. Please ensure the package is available for your system.";
+            exit 1;
+          }
 
       - name: Install Python dependencies
         run: |

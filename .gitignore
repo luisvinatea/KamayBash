@@ -21,7 +21,7 @@ venv/
 env/
 ENV/
 .env/
-.venv/
+.kamaybash/
 
 # Ignore Python egg and distribution files
 *.egg-info/

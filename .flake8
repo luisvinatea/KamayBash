@@ -1,0 +1,6 @@
+# Ignore Warnings on .kamaybash
+[MASTER]
+ignore-patterns=.kamaybash
+# Disable Warnings for specific files
+[MESSAGES CONTROL]
+disable=missing-docstring, invalid-name, too-few-public-methods, no-self-use, too-many-arguments, too-many-locals, too-many-statements, too-many-branches, too-many-return-statements

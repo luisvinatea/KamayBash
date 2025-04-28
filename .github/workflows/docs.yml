@@ -36,8 +36,8 @@ jobs:
             libcairo2-dev \
             gobject-introspection \
             libglib2.0-dev \
-            libffi-dev || true
-          # Skip gir1.2-nautilus-3.0 installation or add a custom installation method
+            libffi-dev \
+            gir1.2-nautilus-3.0
 
       - name: Install Python dependencies
         run: |

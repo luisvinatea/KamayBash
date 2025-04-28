@@ -54,8 +54,6 @@ output/
 scripts/
 tests/
 test/
-practice/
-practice/markdown/
 
 
 # Ignore symbolic links

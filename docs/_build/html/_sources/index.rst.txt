@@ -5,13 +5,14 @@ Welcome to KamayBash's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   extensions/copy_location
-   extensions/merge_csv
-   extensions/merge_pdf
-   extensions/merge_doc
-   extensions/merge_ppt
-   extensions/flatten_folder
-   extensions/organize_by_extension
+   apps/nautilus-extensions/copy_location
+   apps/nautilus-extensions/merge_csv
+   apps/nautilus-extensions/merge_pdf
+   apps/nautilus-extensions/merge_doc
+   apps/nautilus-extensions/merge_ppt
+   apps/nautilus-extensions/flatten_folder
+   apps/nautilus-extensions/organize_by_extension
+   apps/web/KamayPWA
 
 Indices and tables
 ==================
